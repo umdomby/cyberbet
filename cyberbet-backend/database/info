@@ -1,0 +1,21 @@
+
+// проверка наличие базы данных: typeData.rows[0].nametype
+//     var massiveTableBase = []
+//     var tableBase = await db.query('SELECT table_name FROM information_schema.tables WHERE table_schema=\'public\'')
+//     for (var i = 0; i < tableBase.rows.length; i++) {
+//         massiveTableBase.push(tableBase.rows[i].table_name)
+//     }
+//     tableName = contains(massiveTableBase, typeData.rows[0].nametype)
+//     baseCreatedWin = contains(massiveTableBase, typeData.rows[0].nametype+"_win")
+//     function contains(arr, elem) {
+//         for (var i = 0; i < arr.length; i++) {
+//             if (arr[i] === elem) {
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+
+
+//sort
+//ORDER BY lap ASC, "dateMatch" ASC

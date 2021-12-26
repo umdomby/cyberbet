@@ -1,0 +1,64 @@
+import React, {useState} from 'react';
+import Modal from "react-bootstrap/Modal";
+import {Form, Button} from "react-bootstrap";
+import {createChampWin} from "../../http/deviceAPI";
+
+const CreateLapChamp = ({show, onHide}) => {
+
+    const [dated, setDated] = useState('')
+    // const [dateNew, setDateNew] = useState('')
+
+    const addType = () => {
+        try{
+            //createChampLap({dated: dated, datedNew: dateNew}).then(data => {
+            createChampWin({dated: dated}).then(data => {
+                setDated('')
+                // setDateNew('')
+                onHide()
+            })
+        }catch (e) {
+            alert(e.response.data.message)
+        }
+    }
+
+    return (
+        <Modal
+            show={show}
+            onHide={onHide}
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Users Win
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <Form className="m-2">
+                    <Form.Control
+                        value={dated}
+                        onChange={e => setDated(e.target.value)}
+                        placeholder={"Чемпионат"}
+                        onKeyPress={event => {
+                            if (event.key === "Enter") {
+                                return addType()
+                            }
+                        }}
+                    />
+                </Form>
+                {/*<Form className="m-2">*/}
+                {/*    <Form.Control*/}
+                {/*        value={dateNew}*/}
+                {/*        onChange={e => setDateNew(e.target.value)}*/}
+                {/*        placeholder={"Введите дату следующего круга"}*/}
+                {/*    />*/}
+                {/*</Form>*/}
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
+                <Button variant="outline-success" onClick={addType}>Добавить</Button>
+            </Modal.Footer>
+        </Modal>
+    );
+};
+
+export default CreateLapChamp;

@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    /*display: block;*/
+    justify-content: center;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    width: 100%;
+    /*margin-top: 30px;*/
+}
+
+.form {
+    /*padding: 40px;*/
+    width: 800px;
+    /*border-radius: 8px;*/
+    /*border: 2px solid teal;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.form input {
+    min-width: 300px;
+    width: 100%;
+    padding: 5px 10px;
+    border: teal 1px solid;
+}
+
+.form button {
+    margin-top: 15px;
+    margin-left: auto;
+    border: teal 1px solid;
+    background: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: teal;
+    cursor: pointer;
+}
+
+.form button:focus, .form input:focus {
+    outline: none;
+}
+
+.connection_message {
+    width: 400px;
+    text-align: center;
+}
+
+.message {
+    overflow: auto;
+    overflow-x:hidden;  /*для горизонтального*/
+    /*width: 60%;*/
+    height: 600px;
+    border: 2px solid teal;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
